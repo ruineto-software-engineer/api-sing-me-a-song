@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1651728772779" clover="3.2.0">
+  <project timestamp="1651728772780" name="All files">
+    <metrics statements="93" coveredstatements="83" conditionals="29" coveredconditionals="9" methods="31" coveredmethods="27" elements="153" coveredelements="119" complexity="0" loc="93" ncloc="93" packages="9" files="10" classes="10"/>
+    <package name="src">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="app.ts" path="/home/rui/Documentos/DRIVEN Education/[DRIVEN] - Projetos/Projeto 19 - Sing me a Song/api-sing-me-a-song/src/app.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+      </file>
+      <file name="database.ts" path="/home/rui/Documentos/DRIVEN Education/[DRIVEN] - Projetos/Projeto 19 - Sing me a Song/api-sing-me-a-song/src/database.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.controllers">
+      <metrics statements="22" coveredstatements="22" conditionals="1" coveredconditionals="1" methods="7" coveredmethods="7"/>
+      <file name="recommendationController.ts" path="/home/rui/Documentos/DRIVEN Education/[DRIVEN] - Projetos/Projeto 19 - Sing me a Song/api-sing-me-a-song/src/controllers/recommendationController.ts">
+        <metrics statements="22" coveredstatements="22" conditionals="1" coveredconditionals="1" methods="7" coveredmethods="7"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="8" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="58" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.middlewares">
+      <metrics statements="4" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="errorHandlerMiddleware.ts" path="/home/rui/Documentos/DRIVEN Education/[DRIVEN] - Projetos/Projeto 19 - Sing me a Song/api-sing-me-a-song/src/middlewares/errorHandlerMiddleware.ts">
+        <metrics statements="4" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="16" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.repositories">
+      <metrics statements="11" coveredstatements="10" conditionals="1" coveredconditionals="1" methods="7" coveredmethods="6"/>
+      <file name="recommendationRepository.ts" path="/home/rui/Documentos/DRIVEN Education/[DRIVEN] - Projetos/Projeto 19 - Sing me a Song/api-sing-me-a-song/src/repositories/recommendationRepository.ts">
+        <metrics statements="11" coveredstatements="10" conditionals="1" coveredconditionals="1" methods="7" coveredmethods="6"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="35" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="45" count="3" type="stmt"/>
+        <line num="51" count="2" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+        <line num="65" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.routers">
+      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="recommendationRouter.ts" path="/home/rui/Documentos/DRIVEN Education/[DRIVEN] - Projetos/Projeto 19 - Sing me a Song/api-sing-me-a-song/src/routers/recommendationRouter.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.schemas">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="recommendationsSchemas.ts" path="/home/rui/Documentos/DRIVEN Education/[DRIVEN] - Projetos/Projeto 19 - Sing me a Song/api-sing-me-a-song/src/schemas/recommendationsSchemas.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.services">
+      <metrics statements="27" coveredstatements="23" conditionals="6" coveredconditionals="2" methods="9" coveredmethods="9"/>
+      <file name="recommendationsService.ts" path="/home/rui/Documentos/DRIVEN Education/[DRIVEN] - Projetos/Projeto 19 - Sing me a Song/api-sing-me-a-song/src/services/recommendationsService.ts">
+        <metrics statements="27" coveredstatements="23" conditionals="6" coveredconditionals="2" methods="9" coveredmethods="9"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="24" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="46" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="60" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="68" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="69" count="1" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="75" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.utils">
+      <metrics statements="10" coveredstatements="6" conditionals="20" coveredconditionals="4" methods="6" coveredmethods="3"/>
+      <file name="errorUtils.ts" path="/home/rui/Documentos/DRIVEN Education/[DRIVEN] - Projetos/Projeto 19 - Sing me a Song/api-sing-me-a-song/src/utils/errorUtils.ts">
+        <metrics statements="10" coveredstatements="6" conditionals="20" coveredconditionals="4" methods="6" coveredmethods="3"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="12" count="3" type="cond" truecount="0" falsecount="1"/>
+        <line num="13" count="3" type="cond" truecount="0" falsecount="1"/>
+        <line num="14" count="3" type="cond" truecount="0" falsecount="1"/>
+        <line num="15" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="20" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="24" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="28" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="32" count="3" type="cond" truecount="3" falsecount="1"/>
+      </file>
+    </package>
+    <package name="tests.factories">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="musicsBodyFactory.ts" path="/home/rui/Documentos/DRIVEN Education/[DRIVEN] - Projetos/Projeto 19 - Sing me a Song/api-sing-me-a-song/tests/factories/musicsBodyFactory.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="9" type="stmt"/>
+        <line num="19" count="9" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
