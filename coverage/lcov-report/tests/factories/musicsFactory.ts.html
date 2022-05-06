@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/middlewares/errorHandlerMiddleware.ts</title>
+    <title>Code coverage report for tests/factories/musicsFactory.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/middlewares</a> errorHandlerMiddleware.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">tests/factories</a> musicsFactory.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/4</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/4</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -84,7 +84,11 @@
 <a name='L19'></a><a href='#L19'>19</a>
 <a name='L20'></a><a href='#L20'>20</a>
 <a name='L21'></a><a href='#L21'>21</a>
-<a name='L22'></a><a href='#L22'>22</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -97,34 +101,39 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { NextFunction, Request, Response } from "express";
-import {
-  AppError,
-  errorTypeToStatusCode,
-  isAppError,
-} from "../utils/errorUtils.js";
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export default function musicsFactory() {
+  const musics = [
+    {
+      id: 1,
+      name: "Chitãozinho E Xororó - Evidências",
+      youtubeLink: "https://www.youtube.com/watch?v=ePjtnSPFWK8&amp;ab_channel=CHXVEVO",
+      score: 245
+    },
+    {
+      id: 2,
+      name: "STARSET - UNVEILING THE ARCHITECTURE",
+      youtubeLink: "https://www.youtube.com/watch?v=qr4HxlCx4hA&amp;list=PLFd7LxIsegi0E-QtSUV-INVojiEtPV8iI",
+      score: 112
+    },
+    {
+      id: 3,
+      name: "ChillSynth FM - lofi synthwave radio for retro dreaming",
+      youtubeLink: "https://www.youtube.com/watch?v=UedTcufyrHc",
+      score: -20
+    }
+  ];
 &nbsp;
-export function errorHandlerMiddleware(
-  err: Error | AppError,
-  req: Request,
-  res: Response,
-  next: NextFunction
-) {
-  console.log(err);
-&nbsp;
-  if (isAppError(err)) {
-    return res.status(errorTypeToStatusCode(err.type)).send(err.message);
-  }
-&nbsp;
-<span class="cstat-no" title="statement not covered" >  return res.sendStatus(500);</span>
+	return musics;
 }
 &nbsp;</pre></td></tr></table></pre>
 

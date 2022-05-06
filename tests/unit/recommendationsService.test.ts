@@ -1,7 +1,7 @@
 import { jest } from '@jest/globals';
 import { recommendationService } from '../../src/services/recommendationsService.js';
 import { recommendationRepository } from '../../src/repositories/recommendationRepository.js';
-import musicsBodyFactory from '../factories/musicsBodyFactory.js';
+import musicsFactory from '../factories/musicsFactory.js';
 
 describe('Recommendations Service test', () => {
 	beforeEach(() => {
@@ -26,21 +26,16 @@ describe('Recommendations Service test', () => {
 	});
 
 	it('should remove recommendation downvote', async () => {
-		const recommendation = {
-			id: 1,
-			name: 'Qualquer coisa',
-			youtubeLink: 'https://google.com',
-			score: -20
-		};
+		const recommendation = musicsFactory();
 
-		jest.spyOn(recommendationRepository, 'find').mockResolvedValue(recommendation);
+		jest.spyOn(recommendationRepository, 'find').mockResolvedValue(recommendation[2]);
 		jest.spyOn(recommendationRepository, 'updateScore').mockResolvedValue();
 		jest.spyOn(recommendationRepository, 'remove').mockResolvedValue();
 
-		await recommendationService.downvote(recommendation.id);
+		await recommendationService.downvote(recommendation[2].id);
 
-		expect(recommendationRepository.updateScore).toBeCalledWith(recommendation.id, 'decrement');
-		expect(recommendationRepository.remove).toBeCalledWith(recommendation.id);
+		expect(recommendationRepository.updateScore).toBeCalledWith(recommendation[2].id, 'decrement');
+		expect(recommendationRepository.remove).toBeCalledWith(recommendation[2].id);
 	});
 
 	it('should not found recommendation getRandom', async () => {
@@ -54,26 +49,13 @@ describe('Recommendations Service test', () => {
 	});
 
 	it('should not found recommendation getRandom', async () => {
-    const musics = [
-      {
-        id: 1,
-        name: "Chitãozinho E Xororó - Evidências",
-        youtubeLink: "https://www.youtube.com/watch?v=ePjtnSPFWK8&ab_channel=CHXVEVO",
-        score: 245
-      },
-      {
-        id: 2,
-        name: "STARSET - UNVEILING THE ARCHITECTURE",
-        youtubeLink: "https://www.youtube.com/watch?v=qr4HxlCx4hA&list=PLFd7LxIsegi0E-QtSUV-INVojiEtPV8iI",
-        score: 112
-      }
-    ]
+		const musics = musicsFactory();
 
 		jest.spyOn(recommendationService, 'getScoreFilter').mockReturnValue('gt');
 		jest.spyOn(recommendationRepository, 'findAll').mockResolvedValue(musics);
 
 		await recommendationService.getRandom();
 
-    expect(recommendationRepository.findAll).toBeCalledTimes(1);
+		expect(recommendationRepository.findAll).toBeCalledTimes(1);
 	});
 });
