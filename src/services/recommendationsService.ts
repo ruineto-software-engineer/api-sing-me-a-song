@@ -41,7 +41,6 @@ async function getTop(amount: number) {
 async function getRandom() {
   const random = Math.random();
   const scoreFilter = getScoreFilter(random);
-
   const recommendations = await getByScore(scoreFilter);
   if (recommendations.length === 0) {
     throw notFoundError();
@@ -72,15 +71,6 @@ function getScoreFilter(random: number) {
   return "lte";
 }
 
-async function truncate() {
-  await recommendationRepository.truncate();
-}
-
-async function seed() {
-  await recommendationRepository.seed();
-}
-
-
 export const recommendationService = {
   insert,
   upvote,
@@ -89,6 +79,6 @@ export const recommendationService = {
   get,
   getById,
   getTop,
-  truncate,
-  seed,
+  getScoreFilter,
+  getByScore,
 };
