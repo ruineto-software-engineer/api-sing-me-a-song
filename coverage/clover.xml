@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1651893122475" clover="3.2.0">
-  <project timestamp="1651893122475" name="All files">
+<coverage generated="1651895499922" clover="3.2.0">
+  <project timestamp="1651895499922" name="All files">
     <metrics statements="114" coveredstatements="102" conditionals="30" coveredconditionals="20" methods="39" coveredmethods="31" elements="183" coveredelements="153" complexity="0" loc="114" ncloc="114" packages="9" files="15" classes="15"/>
     <package name="src">
       <metrics statements="9" coveredstatements="9" conditionals="1" coveredconditionals="1" methods="0" coveredmethods="0"/>
@@ -177,7 +177,7 @@
     </package>
     <package name="tests.factories">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <file name="musicsBodyFactory.ts" path="/home/rui/Documentos/DRIVEN Education/[DRIVEN] - Projetos/Projeto 19 - Sing me a Song/api-sing-me-a-song/tests/factories/musicsBodyFactory.ts">
+      <file name="recommendationsBodyFactory.ts" path="/home/rui/Documentos/DRIVEN Education/[DRIVEN] - Projetos/Projeto 19 - Sing me a Song/api-sing-me-a-song/tests/factories/recommendationsBodyFactory.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="2" count="9" type="stmt"/>
         <line num="19" count="9" type="stmt"/>

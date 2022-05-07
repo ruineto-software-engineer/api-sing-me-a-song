@@ -1,33 +1,33 @@
 import app from '../../src/app.js';
 import supertest from 'supertest';
 import { prisma } from '../../src/database.js';
-import musicBodyFactory from '../factories/musicsBodyFactory.js';
+import recommendationsBodyFactory from '../factories/recommendationsBodyFactory.js';
 
 describe('POST /recommendations tests', () => {
 	beforeEach(truncateUsers);
 	afterAll(disconnect);
 
 	it('should return 201 and persist the music given a valid body', async () => {
-		const musics = musicBodyFactory();
+		const recommendations = recommendationsBodyFactory();
 
-		const response = await supertest(app).post('/recommendations').send(musics[0]);
+		const response = await supertest(app).post('/recommendations').send(recommendations[0]);
 		expect(response.status).toEqual(201);
 	});
 
 	it('should return 422 given an unnamed body', async () => {
-		const musics = musicBodyFactory();
+		const recommendations = recommendationsBodyFactory();
 
 		const response = await supertest(app).post('/recommendations').send({
-			youtubeLink: musics[0].youtubeLink
+			youtubeLink: recommendations[0].youtubeLink
 		});
 		expect(response.status).toEqual(422);
 	});
 
 	it('should return 422 given a body with no youtubeLink', async () => {
-		const musics = musicBodyFactory();
+		const recommendations = recommendationsBodyFactory();
 
 		const response = await supertest(app).post('/recommendations').send({
-			name: musics[0].name
+			name: recommendations[0].name
 		});
 		expect(response.status).toEqual(422);
 	});
@@ -45,13 +45,13 @@ describe('POST /recommendations/:id/upvote tests', () => {
 	afterAll(disconnect);
 
 	it('should return 200 given a valid recommendation', async () => {
-		const musics = musicBodyFactory();
+		const recommendations = recommendationsBodyFactory();
 
-		const createdMusic = await prisma.recommendation.create({
-			data: { ...musics[0] }
+		const createdRecommendation = await prisma.recommendation.create({
+			data: { ...recommendations[0] }
 		});
 
-		const response = await supertest(app).post(`/recommendations/${createdMusic.id}/upvote`);
+		const response = await supertest(app).post(`/recommendations/${createdRecommendation.id}/upvote`);
 		expect(response.status).toEqual(200);
 	});
 });
@@ -61,13 +61,13 @@ describe('POST /recommendations/:id/downvote tests', () => {
 	afterAll(disconnect);
 
 	it('should return 200 given a valid recommendation', async () => {
-		const musics = musicBodyFactory();
+		const recommendations = recommendationsBodyFactory();
 
-		const createdMusic = await prisma.recommendation.create({
-			data: { ...musics[0] }
+		const createdRecommendation = await prisma.recommendation.create({
+			data: { ...recommendations[0] }
 		});
 
-		const response = await supertest(app).post(`/recommendations/${createdMusic.id}/downvote`);
+		const response = await supertest(app).post(`/recommendations/${createdRecommendation.id}/downvote`);
 		expect(response.status).toEqual(200);
 	});
 });
@@ -77,10 +77,10 @@ describe('GET /recommendations tests', () => {
 	afterAll(disconnect);
 
 	it('should return 200 given a recommendations array', async () => {
-		const musics = musicBodyFactory();
+		const recommendations = recommendationsBodyFactory();
 
 		await prisma.recommendation.create({
-			data: { ...musics[0] }
+			data: { ...recommendations[0] }
 		});
 
 		const response = await supertest(app).get('/recommendations');
@@ -94,14 +94,14 @@ describe('GET /recommendations/:id tests', () => {
 	afterAll(disconnect);
 
 	it('should return 200 given a valid recommendation', async () => {
-		const musics = musicBodyFactory();
+		const recommendations = recommendationsBodyFactory();
 
-		const createdMusic = await prisma.recommendation.create({
-			data: { ...musics[0] }
+		const createdRecommendation = await prisma.recommendation.create({
+			data: { ...recommendations[0] }
 		});
 
-		const response = await supertest(app).get(`/recommendations/${createdMusic.id}`);
-		expect(response.body).toEqual(createdMusic);
+		const response = await supertest(app).get(`/recommendations/${createdRecommendation.id}`);
+		expect(response.body).toEqual(createdRecommendation);
 	});
 });
 
@@ -110,10 +110,10 @@ describe('GET /recommendations/random tests', () => {
 	afterAll(disconnect);
 
 	it('should return 200 given a score more or equal than 10', async () => {
-		const musics = musicBodyFactory();
+		const recommendations = recommendationsBodyFactory();
 
 		const createdMusic = await prisma.recommendation.create({
-			data: { ...musics[0], score: 245 }
+			data: { ...recommendations[0], score: 245 }
 		});
 
 		const response = await supertest(app).get('/recommendations/random');
@@ -126,11 +126,11 @@ describe('GET /recommendations/top/:amount tests', () => {
 	afterAll(disconnect);
 
 	it('should return 200 given a set amount musics', async () => {
-		const musics = musicBodyFactory();
+		const recommendations = recommendationsBodyFactory();
 		const amount = 3;
 
 		await prisma.recommendation.createMany({
-			data: [ { ...musics[0], score: 245 }, { ...musics[1] }, { ...musics[2] } ]
+			data: [ { ...recommendations[0], score: 245 }, { ...recommendations[1] }, { ...recommendations[2] } ]
 		});
 
 		const response = await supertest(app).get(`/recommendations/top/${amount}`);

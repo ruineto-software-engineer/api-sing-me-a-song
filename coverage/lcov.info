@@ -330,11 +330,11 @@ BRF:20
 BRH:10
 end_of_record
 TN:
-SF:tests/factories/musicsBodyFactory.ts
-FN:1,musicsBodyFactory
+SF:tests/factories/recommendationsBodyFactory.ts
+FN:1,recommendationsBodyFactory
 FNF:1
 FNH:1
-FNDA:9,musicsBodyFactory
+FNDA:9,recommendationsBodyFactory
 DA:2,9
 DA:19,9
 LF:2

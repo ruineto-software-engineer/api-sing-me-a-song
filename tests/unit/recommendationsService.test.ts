@@ -40,12 +40,14 @@ describe('Recommendations Service test', () => {
 
 		jest.spyOn(recommendationRepository, 'find').mockResolvedValue(recommendation[2]);
 		jest.spyOn(recommendationRepository, 'updateScore').mockResolvedValue(recommendation[2]);
-		jest.spyOn(recommendationRepository, 'remove').mockResolvedValue();
+		
+		const remove = jest.spyOn(recommendationRepository, 'remove').mockResolvedValue(null);
 
 		await recommendationService.downvote(recommendation[2].id);
 
 		expect(recommendationRepository.updateScore).toBeCalledWith(recommendation[2].id, 'decrement');
 		expect(recommendationRepository.remove).toBeCalledWith(recommendation[2].id);
+		expect(remove).toHaveBeenCalledTimes(1);
 	});
 
 	it('should not found recommendation getRandom', async () => {

@@ -1,5 +1,5 @@
-export default function musicsBodyFactory() {
-	const musics = [
+export default function recommendationsBodyFactory() {
+	const recommendations = [
 		{
 			name: 'Falamansa - Xote dos Milagres',
 			youtubeLink: 'https://www.youtube.com/watch?v=chwyjJbcs1Y'
@@ -16,5 +16,5 @@ export default function musicsBodyFactory() {
     }
 	];
 
-	return musics;
+	return recommendations;
 }
