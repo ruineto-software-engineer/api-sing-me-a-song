@@ -1,5 +1,5 @@
-export default function musicsFactory() {
-  const musics = [
+export default function recommendationsFactory() {
+  const recommendations = [
     {
       id: 1,
       name: "Chitãozinho E Xororó - Evidências",
@@ -20,5 +20,5 @@ export default function musicsFactory() {
     }
   ];
 
-	return musics;
+	return recommendations;
 }

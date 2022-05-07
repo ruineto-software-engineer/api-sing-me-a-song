@@ -1,7 +1,7 @@
 import { jest } from '@jest/globals';
 import { recommendationService } from '../../src/services/recommendationsService.js';
 import { recommendationRepository } from '../../src/repositories/recommendationRepository.js';
-import musicsFactory from '../factories/musicsFactory.js';
+import recommendationsFactory from '../factories/recommendationsFactory.js';
 
 describe('Recommendations Service test', () => {
 	beforeEach(() => {
@@ -25,11 +25,21 @@ describe('Recommendations Service test', () => {
 		}).rejects.toEqual({ message: '', type: 'not_found' });
 	});
 
+	it('should conflict recommendation insert', async () => {
+		const recommendation = recommendationsFactory();
+
+		jest.spyOn(recommendationRepository, 'findByName').mockResolvedValue(recommendation[0]);
+
+		expect(async () => {
+			await recommendationService.insert(recommendation[0]);
+		}).rejects.toEqual({ message: 'Recommendations names must be unique', type: 'conflict' });
+	});
+
 	it('should remove recommendation downvote', async () => {
-		const recommendation = musicsFactory();
+		const recommendation = recommendationsFactory();
 
 		jest.spyOn(recommendationRepository, 'find').mockResolvedValue(recommendation[2]);
-		jest.spyOn(recommendationRepository, 'updateScore').mockResolvedValue();
+		jest.spyOn(recommendationRepository, 'updateScore').mockResolvedValue(recommendation[2]);
 		jest.spyOn(recommendationRepository, 'remove').mockResolvedValue();
 
 		await recommendationService.downvote(recommendation[2].id);
@@ -39,9 +49,11 @@ describe('Recommendations Service test', () => {
 	});
 
 	it('should not found recommendation getRandom', async () => {
+		mockMathRandom(1);
+
 		jest.spyOn(recommendationService, 'getScoreFilter').mockReturnValue('lte');
-		jest.spyOn(recommendationRepository, 'findAll').mockResolvedValue([]);
 		jest.spyOn(recommendationService, 'getByScore').mockResolvedValue([]);
+		jest.spyOn(recommendationRepository, 'findAll').mockResolvedValue([]);
 
 		expect(async () => {
 			await recommendationService.getRandom();
@@ -49,13 +61,23 @@ describe('Recommendations Service test', () => {
 	});
 
 	it('should not found recommendation getRandom', async () => {
-		const musics = musicsFactory();
+		mockMathRandom(0.3);
 
-		jest.spyOn(recommendationService, 'getScoreFilter').mockReturnValue('gt');
-		jest.spyOn(recommendationRepository, 'findAll').mockResolvedValue(musics);
+		const recommendations = recommendationsFactory();
+
+		jest.spyOn(recommendationService, 'getScoreFilter').mockReturnValueOnce('gt');
+		jest.spyOn(recommendationRepository, 'findAll').mockResolvedValue(recommendations);
 
 		await recommendationService.getRandom();
 
 		expect(recommendationRepository.findAll).toBeCalledTimes(1);
 	});
 });
+
+function mockMathRandom(number: number) {
+	const mockMathRandom = Object.create(global.Math);
+	mockMathRandom.random = () => number;
+	global.Math = mockMathRandom;
+
+	return mockMathRandom;
+}
