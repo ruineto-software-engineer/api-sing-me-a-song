@@ -16,4 +16,4 @@ async function seed(req: Request, res: Response) {
 export default {
   reset,
   seed,
-}
+};
