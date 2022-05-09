@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1652053435297" clover="3.2.0">
-  <project timestamp="1652053435297" name="All files">
+<coverage generated="1652063081789" clover="3.2.0">
+  <project timestamp="1652063081789" name="All files">
     <metrics statements="114" coveredstatements="102" conditionals="30" coveredconditionals="20" methods="39" coveredmethods="31" elements="183" coveredelements="153" complexity="0" loc="114" ncloc="114" packages="9" files="15" classes="15"/>
     <package name="src">
       <metrics statements="9" coveredstatements="9" conditionals="1" coveredconditionals="1" methods="0" coveredmethods="0"/>
@@ -71,7 +71,7 @@
         <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="4" count="0" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
       </file>
       <file name="recommendationRepository.ts" path="/home/rui/Documentos/DRIVEN Education/Projeto 19 - Sing me a Song/api-sing-me-a-song/src/repositories/recommendationRepository.ts">
         <metrics statements="12" coveredstatements="11" conditionals="1" coveredconditionals="1" methods="8" coveredmethods="7"/>
@@ -180,12 +180,12 @@
       <file name="recommendationsBodyFactory.ts" path="/home/rui/Documentos/DRIVEN Education/Projeto 19 - Sing me a Song/api-sing-me-a-song/tests/factories/recommendationsBodyFactory.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="2" count="9" type="stmt"/>
-        <line num="19" count="9" type="stmt"/>
+        <line num="21" count="9" type="stmt"/>
       </file>
       <file name="recommendationsFactory.ts" path="/home/rui/Documentos/DRIVEN Education/Projeto 19 - Sing me a Song/api-sing-me-a-song/tests/factories/recommendationsFactory.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="2" count="3" type="stmt"/>
-        <line num="23" count="3" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
       </file>
     </package>
   </project>
